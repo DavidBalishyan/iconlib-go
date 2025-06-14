@@ -9,7 +9,7 @@ import (
 
 func main() {
 	router := gin.Default()
-
+	router.LoadHTMLGlob("public/*")
 	gin.SetMode(gin.ReleaseMode)
 
 	// CORS middleware
@@ -19,7 +19,11 @@ func main() {
 	})
 
 	router.GET("/", func(c *gin.Context) {
-		c.String(http.StatusOK, "Specify icons with /icon/:name")
+		c.HTML(http.StatusOK, "index.html", gin.H{})
+	})
+
+	router.GET("/icon", func(c *gin.Context) {
+		c.HTML(http.StatusOK, "index.html", gin.H{})
 	})
 
 	router.GET("/icon/:name", func(c *gin.Context) {
