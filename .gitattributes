@@ -1,4 +1,6 @@
 *.go linguist-language=go
+*.mod linguist-language=go
+*.sum linguist-language=go
 
 * linguist-detectable=true
 public/** linguist-detectable=false
