@@ -1,0 +1,4 @@
+*.go linguist-language=go
+
+* linguist-detectable=true
+public/** linguist-detectable=false
